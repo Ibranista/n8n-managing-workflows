@@ -7,6 +7,7 @@ import { ItemsModule } from './items/items.module';
 
 @Module({
   imports: [
+    // initialize and load configuration for the entire application
     ConfigModule.forRoot({ isGlobal: true }),
     DatabaseModule,
     ItemsModule,
