@@ -1,0 +1,11 @@
+version: '3'
+services:
+  db:
+    container_name: typeorm-postgres
+    image: postgres:10.7
+    env_file:
+      - .env
+    volumes:
+      - ./db/initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - '5445:5432'
