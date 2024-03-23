@@ -37,6 +37,13 @@ export class ItemsService {
     return await this.itemRepository.update(id, updateItemDto);
   }
 
+  async transactionUpdate(id: number, updateItemDto: UpdateItemDto) {
+    await this.repository.transaction(async (entityManager) => {
+      // await entityManager.update(Item, id, updateItemDto);
+      await entityManager.save(Item, { id, ...updateItemDto });
+    });
+  }
+
   remove(id: number) {
     return `This action removes a #${id} item`;
   }
