@@ -4,6 +4,7 @@ import { Module } from '@nestjs/common';
 import { DatabaseModule } from './database/database.module';
 import { ConfigModule } from '@nestjs/config';
 import { ItemsModule } from './items/items.module';
+import { N8nCredentialsModule } from './n8n-credentials/n8n-credentials.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { ItemsModule } from './items/items.module';
     ConfigModule.forRoot({ isGlobal: true }),
     DatabaseModule,
     ItemsModule,
+    N8nCredentialsModule,
   ],
   // controllers: [AppController],
   // providers: [AppService],
